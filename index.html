@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Machine Learning Basics - Flashcards</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-theme="dark">
+    <div class="app">
+      <header class="app-header">
+        <div class="header-top">
+          <div class="title-group">
+            <h1>Machine Learning Basics</h1>
+            <p class="subtitle">Flashcards Quiz</p>
+          </div>
+          <button id="themeToggle" class="btn ghost" aria-label="Toggle theme">
+            Toggle Theme
+          </button>
+        </div>
+        <div class="deck-toolbar">
+          <label for="deckSelect" class="visually-hidden">Select deck</label>
+          <select id="deckSelect" class="deck-select">
+            <option value="ml">Machine Learning</option>
+            <option value="python">Python</option>
+            <option value="sql">SQL</option>
+            <option value="math">Math</option>
+          </select>
+
+          <div class="timer">
+            <span id="timerDisplay" aria-live="polite">00:30</span>
+            <button id="timerResetBtn" class="btn ghost small">
+              Reset Timer
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="app-main">
+        <section class="card-area">
+          <div class="progress-track">
+            <div
+              class="progress-bar"
+              id="progressBar"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            ></div>
+          </div>
+
+          <div class="card-wrapper">
+            <div class="card" id="flashcard" aria-live="polite">
+              <div class="card-inner" id="cardInner">
+                <div class="card-face card-front">
+                  <h2 class="card-label">Question</h2>
+                  <p class="card-text" id="cardQuestion"></p>
+                </div>
+                <div class="card-face card-back">
+                  <h2 class="card-label">Answer</h2>
+                  <p class="card-text" id="cardAnswer"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button id="prevBtn" class="btn secondary" aria-label="Previous card">
+              &#8592; Previous
+            </button>
+            <button id="toggleAnswerBtn" class="btn primary">
+              Show Answer
+            </button>
+            <button id="nextBtn" class="btn secondary" aria-label="Next card">
+              Next &#8594;
+            </button>
+          </div>
+
+          <div class="score-controls">
+            <div class="score-buttons">
+              <button id="knewBtn" class="btn success">
+                I Knew It
+              </button>
+              <button id="didntKnowBtn" class="btn danger">
+                I Didn’t
+              </button>
+            </div>
+            <div class="score-display" id="scoreDisplay">
+              Score: <span id="correctCount">0</span> / <span id="totalCount">0</span>
+            </div>
+          </div>
+
+          <div class="card-indicator">
+            Card <span id="currentIndex">1</span> of <span id="totalCards">10</span>
+          </div>
+
+          <div class="final-score" id="finalScore">
+            Answer every card to see your final score.
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <small>
+          Track what you know, switch decks, and keep practicing daily.
+        </small>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
